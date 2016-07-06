@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+">
+<bean id = "triangleId" class="objectdependencyinjection.Triangle">
+    <!--for the list-->
+    <property name="points">
+        <list>
+            <ref bean ="zeroPoint"/>
+            <ref bean ="Point1"/>
+            <ref bean ="Point2"/>
+        </list>
+    </property>
+</bean>
+<!--<bean>
+  <property name = "A" >
+      Inner property used insted od reference for zeroPoint
+     <bean id ="zeroPoint" class ="objectdependencyinjection.Point">
+    <property name="x" value ="0"/>
+    <property name="y" value ="0"/>   
+      </bean>
+  </property>
+  <property name = "B" ref ="Point1"/>
+  <property name = "C" ref ="Point2"/>
+
+</bean>-->
+<bean id ="zeroPoint" class ="objectdependencyinjection.Point">
+    <property name="x" value ="0"/>
+    <property name="y" value ="0"/>   
+</bean>
+<bean id ="Point1" class ="objectdependencyinjection.Point">
+    <property name="x" value ="20"/>
+    <property name="y" value ="10"/>   
+</bean>
+
+<bean id ="Point2" class ="objectdependencyinjection.Point">
+    <property name="x" value ="50"/>
+    <property name="y" value ="20"/>   
+</bean>
+
+
+
+</beans>
